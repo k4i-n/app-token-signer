@@ -38,7 +38,7 @@ steps:
     with:
       workload_identity_provider: projects/123/locations/global/workloadIdentityPools/github/providers/github
   - id: app-token
-    uses: nhkhai-vn/app-token-signer@<sha> # v0.1.1
+    uses: sgl-k/app-token-signer@<sha> # v0.1.1
     with:
       client-id: ${{ vars.APP_CLIENT_ID }}
       key: ${{ vars.APP_KEY }}
@@ -69,7 +69,7 @@ The job is the trust boundary: every step in it can read the token, so keep thir
 
 ## Pinning
 
-Pin by full commit SHA. `gh attestation verify dist/main.cjs -R nhkhai-vn/app-token-signer` checks that `dist/` at that commit was built from its source by the release workflow.
+Pin by full commit SHA. `gh attestation verify dist/main.cjs -R sgl-k/app-token-signer` checks that `dist/` at that commit was built from its source by the release workflow.
 
 ## Development
 
